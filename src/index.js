@@ -1,3 +1,9 @@
+import checkTextArea from "./modules/checkTextArea";
+
+document.getElementById('textInput').addEventListener('keyup', checkTextArea)
+
+
+
 //canvas graphic
 const canvas = document.querySelector('.graphic')
 
@@ -12,3 +18,4 @@ new Chart(canvas, {
      }]
    }
  });
+

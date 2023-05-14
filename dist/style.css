@@ -54,6 +54,12 @@ main{
    border: 1px solid rgb(45, 129, 245);
 }
 
+.counter{
+   width: 90%;
+   font-size: .8rem;
+   color: rgb(45, 129, 245);
+}
+
 .buttons{
 
    width: 90%;
