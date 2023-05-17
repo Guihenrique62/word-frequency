@@ -7,6 +7,7 @@ export default function createTable(word,quantity){
    graphic.style.display = 'flex'
 
    const tr = document.createElement('tr')
+   tr.classList.add('tr-body')
    const wordTd = document.createElement('td')
    wordTd.textContent = word
    const quantityTd = document.createElement('td')

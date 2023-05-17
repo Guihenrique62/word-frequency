@@ -10,15 +10,15 @@ document.querySelector('.countWordsBtn').addEventListener('click', countWords)
 
 const canvas = document.querySelector('.graphic')
 
-const chart = new Chart(canvas, {
+export const chart = new Chart(canvas, {
   type: 'doughnut',
   data: {
-  labels: mostWords,
-  datasets: [{
+    labels: mostWords,
+    datasets: [{
       label: 'Quantidade',
       data: quantityOfMostWords,
       borderWidth: 1
-  }]
+    }]
   }
 });
 
