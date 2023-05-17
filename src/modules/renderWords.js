@@ -1,9 +1,7 @@
-import { chart } from "..";
 import createTable from "./createTable"
 import removeTable from "./removeTable";
 
-export let mostWords = [];
-export const quantityOfMostWords = [];
+
 
 export async function renderWords(result){
    try {
@@ -16,13 +14,32 @@ export async function renderWords(result){
             createTable(element.word,element.quantity)
          });
 
-         //Seleciona as 5 words mais usadas
-         for(let i = 0; i < 5;i++){
-            mostWords = result.map(()=>{
-               
-            })
-           quantityOfMostWords.push(result[i].quantity)
+         const wordsOnly = result.map(item => item.word)
+         const mostWords = wordsOnly.slice(0,5)
+
+         const quantityOnly = result.map(item => item.quantity)
+         const quantityOfMostWords = quantityOnly.slice(0,5)
+
+         const currentChart = Chart.getChart("graphic");
+
+         // Verifica se o gráfico existe e o destrói
+         if (currentChart) {
+         currentChart.destroy();
          }
+         
+         const canvas = document.querySelector('.graphic')
+
+         const chart = new Chart(canvas, {
+         type: 'doughnut',
+         data: {
+            labels: mostWords,
+            datasets: [{
+               label: 'Quantidade',
+               data: quantityOfMostWords,
+               borderWidth: 1
+            }]
+         }
+         });
 
          function addData(chart, label, data) {
             chart.data.labels.push(label);
