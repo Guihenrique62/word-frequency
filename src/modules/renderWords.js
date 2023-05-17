@@ -40,17 +40,6 @@ export async function renderWords(result){
             }]
          }
          });
-
-         function addData(chart, label, data) {
-            chart.data.labels.push(label);
-            chart.data.datasets.forEach((dataset) => {
-                dataset.data.push(data);
-            });
-            chart.update();
-        }
-
-        //addData(chart,mostWords,quantityOfMostWords)
-        console.log(mostWords,quantityOfMostWords)
       }
    }catch (err) {
       console.error(err)
